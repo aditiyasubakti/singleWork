@@ -9,3 +9,6 @@ npm install body-parser ejs <br>
 npm install express express-session<br>
 npm install express-useragent mysql<br>
 npm install ngrok nodemon socket.io<br>
+<br><br>
+<h3>after you have installed everything</h3>
+<p>run in your terminal or your gitbash: npm start</p>
