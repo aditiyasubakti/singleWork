@@ -18,15 +18,24 @@ app.use(session({ secret: "your-secret-key", resave: true, saveUninitialized: tr
 const Router = require("./Router/RouterWeb");
 const { url } = require("inspector");
 
-// Konfigurasi Ngrok
-(async () => {
-    const url = await ngrok.connect({
-      proto: 'http', // Dapat disesuaikan dengan 'http' atau 'tcp'
-      addr: 8000,     // Port server lokal
-    });
-    console.log('Ngrok URL:', url);
-  })();
-  
+/*
+  Konfigurasi Ngrok
+  perlu diingat bahwa ngrok perlu autentikasi,
+  jika anda sudah mendaftar ngrok anda,
+  anda bisa mengunakan kode program di bawah ini.
+  jika belum ada bisa langsung mendaftar di situs ngrok,
+  dan ikuti langkah langkah yang tertera
+
+ (async () => {
+     const url = await ngrok.connect({
+       proto: 'http', // Dapat disesuaikan dengan 'http' atau 'tcp'
+       addr: 8000,     // Port server lokal
+     });
+     console.log('Ngrok URL:', url);
+   })();
+  */
+ 
+  //hanya boleh di buka mengunakan browser
 app.use(useragent.express());
 const allowedBrowsers = ['Chrome', 'Firefox', 'Microsoft Edge', 'Opera', 'UC Browser', 'Safari', 'iCab', 'Flock', 'Internet Explorer'];
 app.use((req, res, next) => {
