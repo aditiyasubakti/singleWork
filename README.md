@@ -9,6 +9,10 @@ npm install body-parser ejs <br>
 npm install express express-session<br>
 npm install express-useragent mysql<br>
 npm install ngrok nodemon socket.io<br>
+<br>
+<h3>ngrok</h3>
+<h4>Keep in Mind</h4>
+<p>ngrok needs something called authentication, so if you haven't registered for ngrok, eat ngrok,<br> it can't be used yet, please register or log in to ngrok, you can do it <a href="https://ngrok.com/" target="_blank">here</a></p>
 <br><br>
 <h3>after you have installed everything</h3>
 <p>run in your terminal or your gitbash: npm start</p>
