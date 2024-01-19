@@ -11,7 +11,7 @@ function SelectHome(req, res) {
             const users = JSON.parse(JSON.stringify(result));
             res.render("testing", { users: users, session:req.session, title: "aditiya Subakti" });
         }else{
-            res.redirect("/example/Login");
+            res.redirect("/Login");
         }
         
     });
