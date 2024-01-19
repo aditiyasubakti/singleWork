@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update</title>
+</head>
+<body>
+    <h3>Update data barang disini</h3>
+    <form action="/update/<%=user.id_brg%>" method="post">
+        <input type="text" name="nama" placeholder="masukan nama barang" value="<%=user.nama_brg%>" required><br>
+        <input type="number" min="0" name="stok" placeholder="masukan Stok barang" value="<%=user.stok%>"  required><br>
+        <button name="update">update</button>
+    </form>
+</body>
+</html>

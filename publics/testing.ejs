@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+
+    <h1><%= title %></h1>
+    <table border="1">
+        <tr>
+            <th>Kode</th>
+            <th>Nama barang</th>
+            <th>Stok</th>
+            <th>Aksi</th>
+        </tr>
+        <% for(let user of users){ %>
+        <tr>
+            <td><%=user.id_brg%></td>
+            <td><%=user.nama_brg%></td>
+            <td><%=user.stok%></td>
+            <td><a href="update/<%=user.id_brg%>" style="color: green;">Update</a>|<a href="/delete/<%=user.id_brg%>" style="color: red;">Hapus</a></td>
+        </tr>
+        <% }%>
+    </table>
+    <br><br>
+    <h3>input data barang disini</h3>
+        <form action="/tambah" method="post">
+            <input type="text" name="id" placeholder="masukan Kode barang"><br>
+            <input type="text" name="nama" placeholder="masukan nama barang"><br>
+            <input type="number" min="0" name="stok" placeholder="masukan Stok barang"><br>
+            <button name="simpan">simpan</button>
+        </form>
+        <br>
+        <br>
+        <a href="/logout">logout</a>
+</body>
+<!-- Tambahkan di bagian head atau body HTML -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.1.2/socket.io.js"></script>
+<script>
+    // Membuat koneksi ke server socket.io
+    const socket = io();
+
+    // Menanggapi event 'refresh' dari server
+    socket.on('refresh', () => {
+        console.log('Received refresh event, refreshing page');
+        location.reload(true);
+    });
+</script>
+
+</html>
